@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rekonstruksi Empati VR</title>
+<link rel="stylesheet" href="style.css?v=final2">
+</head>
+<body>
+<header>
+  <div class="logo">🥽 <span>REKONSTRUKSI <b>EMPATI</b></span></div>
+  <nav>
+    <button onclick="go('beranda')">Beranda</button>
+    <button onclick="go('pengenalan')">Pengenalan</button>
+    <button onclick="go('skenario')">Skenario</button>
+    <button onclick="go('vr')">Simulasi VR</button>
+    <button onclick="go('refleksi')">Refleksi</button>
+    <button onclick="go('evaluasi')">Evaluasi</button>
+  </nav>
+  <button class="hamb" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+</header>
+
+<main>
+<section id="bully-intro" class="screen bully-intro active">
+<div class="bully-overlay"></div><div class="bully-content">
+<div class="mini-brand">🥽 REKONSTRUKSI EMPATI</div>
+<p class="welcome">KENALI • PAHAMI • HENTIKAN</p>
+<h1 class="bully-word">BULLY</h1>
+<p class="bully-question">Mari pahami arti BULLY dengan cara yang positif.</p>
+<div class="bully-acronym">
+<div><strong>B</strong><span><b>BE KIND</b><small>Bersikap baik dan menghargai semua orang.</small></span></div>
+<div><strong>U</strong><span><b>UNDERSTAND</b><small>Pahami perasaan orang lain dan tunjukkan empati.</small></span></div>
+<div><strong>L</strong><span><b>LISTEN</b><small>Dengarkan tanpa menghakimi dan beri dukungan.</small></span></div>
+<div><strong>L</strong><span><b>LIFT OTHERS</b><small>Bangun dan dukung teman, jangan menjatuhkan.</small></span></div>
+<div><strong>Y</strong><span><b>YOU CAN STOP IT</b><small>Kamu bisa membantu menghentikan bullying.</small></span></div>
+</div>
+<button class="start-bully" onclick="startExperience()">Masuk ke Modul VR →</button>
+<p class="bully-note">“Rasakan dulu, pahami kemudian, barulah kita bisa menghargai.”</p>
+</div></section><section id="beranda" class="screen">
+  <div class="hero">
+    <div>
+      <small>MODUL KONSELING VIRTUAL REALITY</small>
+      <h1>REKONSTRUKSI<br><em>EMPATI</em></h1>
+      <p>Rasakan, pahami, lalu belajar menghargai. Modul VR interaktif untuk membantu peserta didik memahami dampak bullying dari sudut pandang korban.</p>
+      <button class="cta" onclick="go('pengenalan')">Mulai Pembelajaran →</button>
+    </div>
+    <div class="hero-art">
+      <div class="headset">🥽</div>
+      <h3>Pengalaman imersif yang aman</h3>
+      <p>Gunakan headset VR atau layar HP/laptop. Kamu selalu boleh berhenti jika merasa tidak nyaman.</p>
+    </div>
+  </div>
+  <div class="benefits">
+    <div>💜<b>Menumbuhkan Empati</b></div><div>🛡️<b>Mencegah Bullying</b></div><div>🤝<b>Lingkungan Aman</b></div>
+  </div>
+</section>
+
+<section id="pengenalan" class="screen">
+  <div class="title"><span>02</span><div><h2>Pengenalan</h2><p>Kenali konsep sebelum masuk ke dunia VR.</p></div></div>
+  <div class="cards">
+    <article><i>💜</i><h3>Empati</h3><p>Kemampuan memahami perasaan, pikiran, dan sudut pandang orang lain.</p></article>
+    <article><i>🛡️</i><h3>Bullying</h3><p>Perilaku menyakiti, merendahkan, atau mengucilkan orang lain yang dapat berdampak pada rasa aman dan kesejahteraan korban.</p></article>
+  </div>
+  <div class="steps">
+    <h3>🥽 Sebelum menggunakan VR</h3>
+    <div class="step-row"><b>1</b> Duduk atau berdiri di area yang aman dan cukup luas.</div>
+    <div class="step-row"><b>2</b> Pasang headset dengan nyaman dan atur tali.</div>
+    <div class="step-row"><b>3</b> Pastikan suara tidak terlalu keras.</div>
+    <div class="step-row"><b>4</b> Jika pusing atau tidak nyaman, segera berhenti.</div>
+    <button class="cta" onclick="go('skenario')">Lanjut Pilih Skenario →</button>
+  </div>
+</section>
+
+<section id="skenario" class="screen">
+  <div class="title"><span>03</span><div><h2>Pilih Skenario</h2><p>Pilih situasi yang ingin kamu pahami.</p></div></div>
+  <div class="scenario-grid">
+    <button onclick="choose('Verbal Bullying','situasi verbal: ejekan dan kata-kata merendahkan')"><strong>💬</strong><b>Verbal Bullying</b><small>Ejekan, hinaan, atau ucapan yang menyakiti.</small></button>
+    <button onclick="choose('Fisik Bullying','situasi fisik: tindakan mengganggu atau mengintimidasi')"><strong>🧍</strong><b>Fisik Bullying</b><small>Perilaku fisik yang membuat seseorang merasa tidak aman.</small></button>
+    <button onclick="choose('Relasional Bullying','situasi sosial: pengucilan dari kelompok')"><strong>👥</strong><b>Relasional Bullying</b><small>Mengucilkan atau merusak hubungan sosial.</small></button>
+    <button onclick="choose('Cyberbullying','situasi digital: komentar atau pesan yang merendahkan')"><strong>💻</strong><b>Cyberbullying</b><small>Perundungan yang terjadi melalui ruang digital.</small></button>
+  </div>
+</section>
+
+<section id="vr" class="screen">
+  <div class="title"><span>04</span><div><h2>Pengalaman Imersif — VR</h2><p id="scenarioName">Belum ada skenario.</p></div></div>
+  <div class="vr-app">
+    <div class="scene" id="scene">
+      <div class="scene-top"><span>● LIVE 360°</span><span id="viewText">Sudut pandang korban</span></div>
+      <div class="hall">
+        <div class="wall left"></div><div class="wall right"></div>
+        <div class="floor"></div>
+        <div class="student s1">🧑‍🎓</div><div class="student s2">🧑‍🎓</div><div class="student victim">🙂</div>
+        <div class="speech one">“Eh, lihat dia!”</div>
+        <div class="speech two">“Jangan ikut sini.”</div>
+        <div class="notice-vr">Rasakan situasi dari sudut pandang korban.</div>
+      </div>
+      <div class="direction leftbtn" onclick="look(-1)">‹</div><div class="direction rightbtn" onclick="look(1)">›</div>
+      <div class="scene-bottom">
+        <button onclick="togglePlay()" id="playBtn">▶ Mulai Simulasi</button>
+        <button onclick="fullscreen()">⛶ Layar Penuh</button>
+        <button onclick="showGuide()">❓ Panduan VR</button>
+      </div>
+    </div>
+    <aside class="vr-side">
+      <h3>Langkah VR</h3>
+      <ol>
+        <li>Pasang headset dengan nyaman.</li>
+        <li>Lihat sekeliling secara perlahan.</li>
+        <li>Perhatikan suara, ekspresi, dan suasana.</li>
+        <li>Coba pahami perasaan korban.</li>
+        <li>Jangan memaksakan diri jika tidak nyaman.</li>
+      </ol>
+      <div class="progress"><span id="progress"></span></div>
+      <p id="timer">Simulasi belum dimulai</p>
+      <button class="cta full" onclick="go('refleksi')">Selesai → Refleksi</button>
+    </aside>
+  </div>
+  <div class="video-upload">
+    <b>🎥 Punya video 360° sendiri?</b>
+    <input type="file" accept="video/*" onchange="loadVideo(event)">
+    <video id="uploadedVideo" controls playsinline></video>
+  </div>
+</section>
+
+<section id="refleksi" class="screen">
+  <div class="title"><span>05</span><div><h2>Refleksi & Konseling</h2><p>Pahami pengalamanmu setelah simulasi.</p></div></div>
+  <div class="counselor"><div>🧑‍🏫</div><div><h3>Bagaimana perasaanmu?</h3><p>Tidak ada jawaban yang salah. Pilih yang paling sesuai.</p></div></div>
+  <div class="emotions">
+    <button onclick="emotion(this)">😔 Sedih</button><button onclick="emotion(this)">😠 Marah</button>
+    <button onclick="emotion(this)">😟 Takut</button><button onclick="emotion(this)">😕 Bingung</button>
+    <button onclick="emotion(this)">💚 Peduli</button><button onclick="emotion(this)">💭 Lainnya</button>
+  </div>
+  <textarea id="reflection" placeholder="Apa yang kamu pelajari dari pengalaman ini?"></textarea>
+  <button class="cta" onclick="saveReflection()">Simpan Refleksi →</button>
+</section>
+
+<section id="evaluasi" class="screen">
+  <div class="title"><span>06</span><div><h2>Evaluasi & Komitmen</h2><p>Jadikan pengalaman sebagai tindakan nyata.</p></div></div>
+  <div class="commit">
+    <h3>Aku berkomitmen untuk:</h3>
+    <label><input type="checkbox"> Menghargai teman</label>
+    <label><input type="checkbox"> Tidak mengejek atau merendahkan</label>
+    <label><input type="checkbox"> Membantu teman yang membutuhkan</label>
+    <label><input type="checkbox"> Tidak ikut menyebarkan perundungan digital</label>
+    <label><input type="checkbox"> Melapor kepada orang dewasa tepercaya jika melihat bullying</label>
+    <button class="cta" onclick="commit()">Kirim Komitmen</button>
+    <p id="commitMsg"></p>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="guide">
+ <div class="modalbox"><button class="x" onclick="hideGuide()">×</button><h2>🥽 Cara Menggunakan VR</h2>
+ <p><b>1.</b> Pastikan area sekitar aman.</p><p><b>2.</b> Pasang headset dan atur posisi hingga nyaman.</p><p><b>3.</b> Jalankan simulasi.</p><p><b>4.</b> Arahkan kepala perlahan untuk melihat sekitar.</p><p><b>5.</b> Setelah selesai, lepaskan headset dan lanjut ke refleksi.</p>
+ <div class="safe">Jika merasa pusing, takut, atau tidak nyaman, hentikan simulasi. Belajar harus tetap aman.</div></div>
+</div>
+<footer>REKONSTRUKSI EMPATI · Modul Konseling Virtual Reality</footer>
+<script src="script.js?v=final2"></script>
+</body>
+</html>
